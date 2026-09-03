@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arturo — Desarrollador de Software</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Botón para abrir/cerrar el explorador en móvil -->
+<button class="explorer-toggle" id="explorerToggle" aria-label="Abrir explorador de archivos">
+  <span></span><span></span><span></span>
+</button>
+
+<div class="app">
+
+  <!-- ============ SIDEBAR: EXPLORADOR DE ARCHIVOS ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">EXPLORADOR</span>
+    </div>
+
+    <div class="sidebar-project">
+      <svg class="chevron" viewBox="0 0 16 16"><path d="M5 3l6 5-6 5V3z"/></svg>
+      <svg class="folder-icon" viewBox="0 0 16 16"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h3.379a1.5 1.5 0 0 1 1.06.44l1.122 1.12A1.5 1.5 0 0 0 9.12 4H13.5A1.5 1.5 0 0 1 15 5.5v7A1.5 1.5 0 0 1 13.5 14h-11A1.5 1.5 0 0 1 1 12.5v-9z"/></svg>
+      <span>portafolio-arturo</span>
+    </div>
+
+    <nav class="file-tree" aria-label="Navegación de secciones">
+      <a href="#sobre-mi" class="file-item" data-target="sobre-mi">
+        <svg class="file-icon js" viewBox="0 0 16 16"><rect width="16" height="16" rx="2"/></svg>
+        <span>01-sobre-mi.js</span>
+      </a>
+      <a href="#habilidades" class="file-item" data-target="habilidades">
+        <svg class="file-icon json" viewBox="0 0 16 16"><rect width="16" height="16" rx="2"/></svg>
+        <span>02-habilidades.json</span>
+      </a>
+      <a href="#servicios" class="file-item" data-target="servicios">
+        <svg class="file-icon md" viewBox="0 0 16 16"><rect width="16" height="16" rx="2"/></svg>
+        <span>03-servicios.md</span>
+      </a>
+      <a href="#proyectos" class="file-item" data-target="proyectos">
+        <svg class="file-icon html" viewBox="0 0 16 16"><rect width="16" height="16" rx="2"/></svg>
+        <span>04-proyectos.html</span>
+      </a>
+      <a href="#contacto" class="file-item" data-target="contacto">
+        <svg class="file-icon sh" viewBox="0 0 16 16"><rect width="16" height="16" rx="2"/></svg>
+        <span>05-contacto.sh</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="git-branch">
+        <svg viewBox="0 0 16 16"><circle cx="4" cy="4" r="2"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="8" r="2"/><path d="M4 6v4M4 4h4a4 4 0 0 1 4 4"/></svg>
+        <span>main</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ ÁREA PRINCIPAL: EDITOR ============ -->
+  <main class="editor">
+
+    <!-- barra de pestañas -->
+    <div class="tab-bar" id="tabBar">
+      <div class="tab active" data-target="sobre-mi"><span>sobre-mi.js</span></div>
+      <div class="tab" data-target="habilidades"><span>habilidades.json</span></div>
+      <div class="tab" data-target="servicios"><span>servicios.md</span></div>
+      <div class="tab" data-target="proyectos"><span>proyectos.html</span></div>
+      <div class="tab" data-target="contacto"><span>contacto.sh</span></div>
+    </div>
+
+    <div class="editor-body">
+
+      <!-- ===================== SOBRE MÍ ===================== -->
+      <section class="code-file" id="sobre-mi">
+        <div class="line-numbers" aria-hidden="true"></div>
+        <div class="file-content">
+
+          <p class="hero-tag"><span class="tok-kw">const</span> <span class="tok-var">rol</span> <span class="tok-op">=</span> <span class="tok-str">"Desarrollador de Software"</span><span class="tok-punct">;</span></p>
+
+          <h1 class="hero-name">Arturo<span class="cursor-blink">_</span></h1>
+
+          <p class="hero-sub">
+            <span class="tok-comment">// junior con base sólida en backend, bases de datos y automatización</span>
+          </p>
+
+          <div class="comment-block">
+            <span class="tok-comment">/**</span>
+            <p><span class="tok-comment"> * Soy desarrollador de software con enfoque en construir sistemas</span></p>
+            <p><span class="tok-comment"> * completos de principio a fin: desde el modelo de datos hasta la</span></p>
+            <p><span class="tok-comment"> * API y la interfaz que lo consume. Aprendo escribiendo proyectos</span></p>
+            <p><span class="tok-comment"> * reales — no tutoriales — y disfruto tanto el backend en Java</span></p>
+            <p><span class="tok-comment"> * como resolver flujos de trabajo repetitivos con automatización.</span></p>
+            <span class="tok-comment"> */</span>
+          </div>
+
+          <div class="stat-row">
+            <div class="stat">
+              <span class="stat-num">4+</span>
+              <span class="stat-label">lenguajes / herramientas</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">Java · SQL · JS</span>
+              <span class="stat-label">stack principal</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">MVC · REST</span>
+              <span class="stat-label">arquitecturas con las que trabajo</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== HABILIDADES ===================== -->
+      <section class="code-file" id="habilidades">
+        <div class="line-numbers" aria-hidden="true"></div>
+        <div class="file-content">
+
+          <h2 class="section-title"><span class="tok-punct">{</span> habilidades <span class="tok-punct">}</span></h2>
+
+          <div class="skills-grid">
+
+            <div class="skill-group">
+              <span class="tok-key">"backend"</span><span class="tok-punct">:</span>
+              <ul class="skill-list">
+                <li><span class="tok-str">"Java"</span></li>
+                <li><span class="tok-str">"Spring Boot"</span></li>
+                <li><span class="tok-str">"API REST"</span></li>
+                <li><span class="tok-str">"JWT / Spring Security"</span></li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <span class="tok-key">"bases_de_datos"</span><span class="tok-punct">:</span>
+              <ul class="skill-list">
+                <li><span class="tok-str">"MySQL"</span></li>
+                <li><span class="tok-str">"Modelado / normalización"</span></li>
+                <li><span class="tok-str">"Triggers y auditoría"</span></li>
+                <li><span class="tok-str">"Consultas avanzadas (CTEs, ventanas)"</span></li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <span class="tok-key">"frontend"</span><span class="tok-punct">:</span>
+              <ul class="skill-list">
+                <li><span class="tok-str">"HTML5"</span></li>
+                <li><span class="tok-str">"CSS3"</span></li>
+                <li><span class="tok-str">"JavaScript"</span></li>
+                <li><span class="tok-str">"Consumo de APIs / fetch"</span></li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <span class="tok-key">"automatizacion"</span><span class="tok-punct">:</span>
+              <ul class="skill-list">
+                <li><span class="tok-str">"n8n"</span></li>
+                <li><span class="tok-str">"Integraciones con IA (OCR, clasificación)"</span></li>
+                <li><span class="tok-str">"Webhooks y bots"</span></li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <span class="tok-key">"herramientas"</span><span class="tok-punct">:</span>
+              <ul class="skill-list">
+                <li><span class="tok-str">"Git"</span></li>
+                <li><span class="tok-str">"IntelliJ IDEA"</span></li>
+                <li><span class="tok-str">"Swagger / OpenAPI"</span></li>
+                <li><span class="tok-str">"Maven"</span></li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== SERVICIOS ===================== -->
+      <section class="code-file" id="servicios">
+        <div class="line-numbers" aria-hidden="true"></div>
+        <div class="file-content">
+
+          <h2 class="section-title"><span class="tok-punct">#</span> Servicios</h2>
+          <p class="section-lead tok-comment"># qué puedo construir para ti</p>
+
+          <div class="services-list">
+
+            <article class="service-item">
+              <span class="service-index">01</span>
+              <div>
+                <h3>Backend con Java y Spring Boot</h3>
+                <p>APIs REST completas: autenticación con JWT, control de errores centralizado, documentación con Swagger y una arquitectura en capas (controlador, servicio, repositorio) pensada para crecer.</p>
+              </div>
+            </article>
+
+            <article class="service-item">
+              <span class="service-index">02</span>
+              <div>
+                <h3>Diseño y modelado de bases de datos</h3>
+                <p>Esquemas MySQL normalizados, triggers para reglas de negocio, auditoría automática de cambios y consultas de análisis (reportes, segmentación, funciones de ventana).</p>
+              </div>
+            </article>
+
+            <article class="service-item">
+              <span class="service-index">03</span>
+              <div>
+                <h3>Frontend funcional</h3>
+                <p>Interfaces en HTML, CSS y JavaScript conectadas a tu backend: formularios con validación, paneles de administración y vistas por rol de usuario.</p>
+              </div>
+            </article>
+
+            <article class="service-item">
+              <span class="service-index">04</span>
+              <div>
+                <h3>Automatización de procesos con n8n</h3>
+                <p>Flujos que reemplazan tareas manuales repetitivas: lectura de documentos con IA, bots de mensajería, y conexión entre hojas de cálculo, formularios y APIs externas.</p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== PROYECTOS ===================== -->
+      <section class="code-file" id="proyectos">
+        <div class="line-numbers" aria-hidden="true"></div>
+        <div class="file-content">
+
+          <h2 class="section-title">&lt;proyectos&gt;</h2>
+
+          <div class="projects-grid">
+
+            <article class="project-card">
+              <div class="project-card-top">
+                <span class="project-tag tag-java">Java · Spring Boot · MySQL</span>
+              </div>
+              <h3>LogiTrack S.A.</h3>
+              <p>Backend completo de gestión de bodegas e inventario: movimientos de stock con triggers, auditoría automática, autenticación JWT por roles, reportes avanzados y documentación Swagger.</p>
+              <ul class="project-details">
+                <li>Arquitectura en capas: modelo, repositorio, servicio, controlador</li>
+                <li>Movimientos de ENTRADA / SALIDA / TRANSFERENCIA con validación de stock</li>
+                <li>Frontend básico de consulta servido desde el propio backend</li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-top">
+                <span class="project-tag tag-java">Java · MySQL · MVC</span>
+              </div>
+              <h3>TecnoStore</h3>
+              <p>Sistema de gestión de tienda en consola bajo arquitectura MVC, con manejo de inventario, ventas y un sistema de créditos para clientes.</p>
+              <ul class="project-details">
+                <li>Separación en modelo, DAO, controlador y vista</li>
+                <li>Persistencia en MySQL con datos semilla</li>
+                <li>Uso de Stream API para procesamiento de datos</li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-top">
+                <span class="project-tag tag-n8n">n8n · IA · OCR</span>
+              </div>
+              <h3>Justificación de ausencias con IA</h3>
+              <p>Automatización que recibe documentos por Telegram, los clasifica con IA y registra la información automáticamente, sin intervención manual.</p>
+              <ul class="project-details">
+                <li>Bot de Telegram + OCR para lectura de documentos</li>
+                <li>Clasificación con IA (GPT-4o mini vía OpenRouter)</li>
+                <li>Registro automático en Google Sheets</li>
+                <li>Formulario web con validación y carga de archivos</li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-top">
+                <span class="project-tag tag-js">JavaScript · LocalStorage</span>
+              </div>
+              <h3>LMS — Institución Educativa ABC</h3>
+              <p>Plataforma de gestión educativa con acceso diferenciado por rol para estudiantes, profesores y coordinadores.</p>
+              <ul class="project-details">
+                <li>Login con enrutamiento según rol de usuario</li>
+                <li>Módulos CRUD para estudiantes, profesores y cursos</li>
+                <li>Portales independientes por tipo de usuario</li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-top">
+                <span class="project-tag tag-sql">MySQL · Análisis de datos</span>
+              </div>
+              <h3>Modelado de base de datos e-commerce</h3>
+              <p>Esquema de base de datos para tienda en línea con eventos programados y consultas orientadas a análisis de negocio.</p>
+              <ul class="project-details">
+                <li>Eventos programados para tareas automáticas</li>
+                <li>Consultas con CTEs y funciones de ventana</li>
+                <li>Segmentación de clientes tipo RFM</li>
+              </ul>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card-top">
+                <span class="project-tag tag-js">JavaScript · APIs públicas</span>
+              </div>
+              <h3>Mini-apps con consumo de APIs</h3>
+              <p>Conjunto de aplicaciones pequeñas centradas en dominar fetch, promesas y manipulación del DOM.</p>
+              <ul class="project-details">
+                <li>Explorador de imágenes con la API APOD de la NASA</li>
+                <li>Juego de Blackjack con la Deck of Cards API</li>
+                <li>Buscador de personajes con la API de Rick and Morty</li>
+              </ul>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== CONTACTO ===================== -->
+      <section class="code-file" id="contacto">
+        <div class="line-numbers" aria-hidden="true"></div>
+        <div class="file-content">
+
+          <h2 class="section-title tok-comment"># !/bin/bash</h2>
+
+          <div class="terminal">
+            <div class="terminal-titlebar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">contacto.sh</span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="prompt">arturojeda.2003@gmail.com</span><span class="prompt-sep">:~$</span> ./contacto <span class="tok-flag">--email</span> <a href="mailto:tucorreo@ejemplo.com" class="term-link">arturojeda.2003@gmail.com</a></p>
+              <p><span class="prompt">arturo1302</span><span class="prompt-sep">:~$</span> ./contacto <span class="tok-flag">--github</span> <a href="#" class="term-link">https://github.com/Arturo1302</a></p>
+              <p><span class="prompt">Arturo Ojeda Tarazona</span><span class="prompt-sep">:~$</span> ./contacto <span class="tok-flag">--linkedin</span> <a href="#" class="term-link">www.linkedin.com/in/arturo-ojeda-90643b368</a></p>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<!-- ============ BARRA DE ESTADO ============ -->
+<footer class="status-bar">
+  <div class="status-left">
+    <span class="status-branch">
+      <svg viewBox="0 0 16 16"><circle cx="4" cy="4" r="1.6"/><circle cx="4" cy="12" r="1.6"/><circle cx="12" cy="8" r="1.6"/><path d="M4 5.6v4.8M4 4h4a4 4 0 0 1 4 4"/></svg>
+      main
+    </span>
+    <span id="statusFile">sobre-mi.js</span>
+  </div>
+  <div class="status-right">
+    <span>Ln <span id="statusLine">1</span></span>
+    <span>UTF-8</span>
+    <span id="statusLang">JavaScript</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
